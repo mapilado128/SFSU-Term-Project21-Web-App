@@ -1,0 +1,93 @@
+#postheader {
+    font-family: "Brush Script MT", cursive;
+    font-weight: bolder;
+    text-align: left;
+    font-size: 100%;
+    color: blanchedalmond;
+ }
+ #postbody{
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -400px;
+    margin-left: -200px;
+ }
+ form{
+    animation-name: stretch;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    animation-play-state: running;
+ }
+ @keyframes stretch {
+    0% {
+        transform: scale(.3);
+        border-radius: 20%;
+    }
+    100% {
+        transform: scale(1.0);
+    }
+ }
+ #postbutton{
+    margin-top: 8px;
+    margin-left: 450px;
+    margin-bottom: 3px;
+    background: transparent;
+    font-family: "Verdana", sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px;
+    color: blanchedalmond;
+    font-size: x-large;
+ }
+ #postbutton:hover {
+    background-color: darkred;
+    color: blanchedalmond;
+ }
+ label{
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: blanchedalmond;
+ }
+ input{
+    margin-left: 10px;
+    background: transparent;
+    color: lightgoldenrodyellow;
+    border:none;
+    border-bottom: 1px solid blanchedalmond;
+    opacity: 0.6;
+ }
+ #descr{
+    margin-top: 10px;
+ }
+ #img{
+    margin-top: 10px;
+ }
+ #imgup{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 20px;
+    padding-right: 100px;
+    margin-top: 5px;
+    margin-left: 60px;
+    background-color: blanchedalmond;
+    opacity: 0.7;
+ }
+ #chckbx{
+    margin-top: 20px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: small;
+    color: blanchedalmond;
+    border: 1px;
+ }
+
+ #postlabel{
+    margin-left: 6px;
+    font-size: 0.30cm;
+ }
