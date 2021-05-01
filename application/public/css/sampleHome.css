@@ -1,6 +1,20 @@
 *, *::before, *::after{
     box-sizing: border-box;
 }
+#banner-title{
+    font-family: "Brush Script MT", cursive;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 300%;
+    padding-top: 20px;
+    color: blanchedalmond;
+    padding-bottom: 300px; 
+}
+#banner{
+    background: rgba(0,0,0,.5);
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
 #home-title{
     font-family: "Brush Script MT", cursive;
     font-weight: bolder;
@@ -10,7 +24,15 @@
 }
 body{
     background-image: url("https://cdn.wallpapersafari.com/19/75/i2vCxT.jpg");
-    background-size:unset;
+}
+#container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 100px 70px 1fr 1fr 50px;
+    
+
 }
 #gallery{
     width: 95%;
@@ -50,3 +72,106 @@ div.gallery{
     text-align: center;
     color: blanchedalmond;
 }
+/* TODO: FIX MESSAGE */
+#flash-message{
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    opacity: 0.7;
+    text-align: center;
+    color: blanchedalmond;
+    position: fixed;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, 0); 
+
+ }
+ #flash-message div{
+    text-align: center;
+}
+#footer{
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: blanchedalmond;
+    text-align: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    font-size: 65%;
+}
+
+.parent-nav {
+    display: flex;
+    flex-direction: row;
+    /* justify-content:; */
+    padding: 2vh;
+    /* position:sticky; */
+    top: 0px;
+    /* left: 15%; */
+    grid-column-start: 1;
+    grid-column-end: 6;
+    max-width: 100%;    
+    min-width: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent-nav a:visited{
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: blanchedalmond;
+}
+    
+
+.right-side, .right-most-side,.left-side {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
+    flex-grow: 1;
+    
+    grid-column-start: 1;
+    grid-column-end: 6;
+    
+}
+
+#about{
+    text-align: center;
+    
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: blanchedalmond;
+}
+
+.center{
+    flex-grow: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    justify-content: center;
+    opacity: 0.6;
+    
+}
+#search-bar{
+    margin-left: 35%;
+    justify-content: center;
+    background: burlywood;
+    color: black;
+    border:none;
+    padding: 2%;
+    opacity: 0.6;
+}
+
+#nav-posting{
+    text-align: center;
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: blanchedalmond;
+}
+
+#log-button{
+    
+    text-align: center;
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: blanchedalmond;
+}
+

@@ -59,7 +59,7 @@ form{
    width: 5rem;
    margin-left: 10px;
 }
-#reginput{
+.reginput{
    margin-left: 10px;
    background: burlywood;
    color: black;

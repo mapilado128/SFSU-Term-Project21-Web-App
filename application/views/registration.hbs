@@ -3,36 +3,36 @@
     <h1>Sign Up</h1>
 </header>
 
-<form id="form">
+<form id="form" method="POST" action="/users/register" enctype="application/x-www-form-urlencoded">
     <div class="formusr" id="formusr">
         <label id="reglabel" for="username">Username</label>
         <div class="form-control">
-            <input id="reginput" type="text" placeholder="wAssUp25" id="username" />
+            <input class="reginput" type="text" placeholder="wAssUp25" required name="username" />
         </div>
         <br>
         <label id="reglabel" for="email">Email</label>
         <div class="form-control">
-            <input id="reginput" type="email" placeholder="iro_mark@example.com" id="email" />
+            <input class="reginput" type="email" placeholder="iro_mark@example.com" required name="email"/>
         </div>
         <br>
         <label id="reglabel" for="password">Password</label>
         <div class="form-control">
-            <input id="reginput" type="password" placeholder="Password" id="password" />
+            <input class="reginput" type="password" placeholder="Password" required name="password"/>
         </div>
         <br>
         <label id="reglabel" for="cpassword">Confirm Password</label>
         <div class="form-control">
-            <input id="reginput" type="password" placeholder="Confirm Password" id="cpassword" />
+            <input class="reginput" type="password" placeholder="Confirm Password" required name="cpassword" />
         </div>
         <br>
     </div>
     <div class="error" id="error"></div>
     <div id="checkbx">
         <input type="checkbox" required="true" />
-        <label id="reglabel">I am 13+ years old</label>
+        <label class="reglabel">I am 13+ years old</label>
         <br>
         <input type="checkbox" required="true" />
-        <label id="reglabel">I have read and accepted the <a href="#">Terms of Services</a> and <a href="#">Privacy Rules</a></label>
+        <label class="reglabel">I have read and accepted the <a href="#">Terms of Services</a> and <a href="#">Privacy Rules</a></label>
         <br>
     </div>
     <button id="regbutton">Sign Up</button>

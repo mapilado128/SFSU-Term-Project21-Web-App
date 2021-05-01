@@ -1,11 +1,23 @@
-<nav id="nav-bar">
-    <div id="brand" class="nav-items">
-        <a href="/" id="brand-anchor"><span id="brand-text"><i style="margin-right: .2rem;">i</i>PA</span></a>
+<div class="parent-nav"id="all-nav">
+    <div class="left-side" id="about">
+        <a href="/" >About</a>
     </div>
-    <input id="search-text" name="search-text" type="text">
-    <div id="text-bar-icon">
-        <i id="sicon" class="fas fa-search nav-items"></i>
+    <div class="right-side">
+        <div id="nav-posting">
+        <a href="/postimage" id="post-button">Post</a>
+        </div>
     </div>
-    <a href="/postimage" id="post-button" class="nav-items anchor-buttons">Post</a>
-    <a href="/login" id="authenticate-button" class="nav-items anchor-buttons">Log in</a>
-</nav>
+    <div class="right-most-side">
+        <div id="log-button">
+        {{#if logged}}
+            <a id="logout-button">Log Out</a>
+        {{else}}
+            <a href="/login" id="login-button">Log In</a>
+        {{/if}}
+        </div>
+    </div>
+    <div class="center" id="search-input">
+        <input id="search-bar" type="text" placeholder="Search..">
+    </div>
+    
+</div>

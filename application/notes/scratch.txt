@@ -1,0 +1,18 @@
+users
+    id
+    username
+    email
+    pass
+    usertype
+    active
+    created
+
+posts
+    id
+    title
+    description
+    photopath
+    thumbnail
+    active
+    created
+    fk_userid

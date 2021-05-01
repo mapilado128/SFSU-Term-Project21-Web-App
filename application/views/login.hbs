@@ -4,16 +4,16 @@
    </header>
 
    <div id="loginbody">
-      <form id="loginform">
+      <form id="loginform" method="POST" action="/users/login" enctype="application/x-www-form-urlencoded">
          <div id="log">
             <div id="usr">
                <label>Username</label>
-               <input type="text" required />
+               <input class="login-input" type="text" required name="username"/>
                <br>
             </div>
             <div id="pass">
                <label>Password</label>
-               <input type="password" required />
+               <input class="login-input" type="password" required name="password"/>
                <br>
             </div>
          </div>

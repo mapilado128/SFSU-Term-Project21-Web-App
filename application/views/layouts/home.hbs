@@ -10,13 +10,34 @@
    <link rel="stylesheet" type="text/css" href ="public/css/postimage.css">
    <script defer src="public/js/sampleHome.js"></script>
    <script defer src="public/js/registrationValidation.js"></script>
+   <script defer src="public/js/frontendjs.js"></script>
 </head>
 <body>
     <div id="container">
+        {{log this}}
         {{> header}}
+        {{#if (emptyObject messages)}}
+        {{> flashmessage}}
+        {{/if}}
         {{{body}}}
         {{> footer}}
     </div>
+
+    {{#if logged}}
+        <script>
+            let ele = document.getElementById('logout-button');
+            if(ele){
+                ele.onclick = (even) => {
+                    fetch('/users/logout', {
+                        method: "POST"
+                    })
+                    .then((data) => {
+                        location.replace('/');
+                    })
+                }
+            }
+        </script>
+    {{/if}}
 </body>
 
 </html>
