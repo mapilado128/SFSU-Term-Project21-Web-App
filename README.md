@@ -44,5 +44,5 @@ Please follow the instructions below and fill in the information requested when 
 **2.** Once you're sure, on your terminal, do: <br />
  `npm start`
    <br />
-3. Finally, while npm is running, go to your web-browser and type in: <br />
-   [localhost:3000]
+3. Finally, while npm is running, go to your web-browser and type in the URL: <br />
+   localhost:3000
