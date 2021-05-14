@@ -1,34 +1,98 @@
-<div id="imagepostbody">
-    <div id="tithead">
-    <header>
-        <h1>See Image Posts</h1>
-    </header>
-</div>
-<div id="containr">
-    <div id="title">
-        <header>
-            <div id="titleux">
-                <h4>Title: </h4>
-            </div>
-            <div id="post-title">"Cute Dog In a Park"</div>
-        </header>
+ 
+<div id="image-container">
+    <div id="image-imgsrc">
+        <img id="image-imagesrcx" src="/{{currentPost.photopath}}">
     </div>
-    <div id="auth">
-        <header>
-            <div id="authux">
-                <h4>Author: </h4>
+    <div id="image-body">
+        <div id="image-title">
+            <header>
+                <h2 id="imagepost-title">{{currentPost.title}}</h2>
+            </header>
+        </div>
+        <div id="imageauth">
+            <div id="image-authux">
+                <h4>Posted by </h4>
             </div>
-            <div id="post-author">Jablinsky Dmitry</div>
-        </header>
-    </div>
-    <div id="datecr">
-        <header>
-            <div id="datecrux">
-                <h4>Date Created: </h4>
+            <div id="imagepost-author">{{currentPost.username}}</div>
+        </div>
+    
+        <div id="image-description">   
+            <div id="imagepost-description">"{{currentPost.description}}"</div>
+        </div>
+        <div id="comment-container">
+            <div id="messages">
+                {{#each currentPost.comments}}
+                    {{> comment this}}
+                {{/each}}
             </div>
-            <div id="post-creation-time"><em>~Feb 31, 2030~</em></div>
-        </header>
+            <div id="comment-box">
+                <textarea id="comment-box-text" class="form-control" aria-label="With textarea" placeholder="Reply with a comment..."></textarea>
+                <span id="comment-box-button" class="input-group-text">
+                    <svg width="1em" viewBox="0 0 16 16" class="bi bi-chat-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1
+                        1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div id="imagedatecr">
+            <div id="creation-time-header">Posted on</div>  
+            <div id="imagepost-creation-time"><em>{{currentPost.created}}</em></div>
+        </div>
     </div>
-    <div id="post-ciamge"><img src="https://fakeimg.pl/300/"></div>
 </div>
-</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('div[id=imagepost-creation-time]').forEach((imgDate) => {
+            imgDate.textContent = new Date(imgDate.textContent).toLocaleString();
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('span[class=date-posted]').forEach((postedDate) => {
+            postedDate.textContent = new Date(postedDate.textContent).toLocaleString();
+        });
+    });
+
+    function addMessage(data){
+        let template = document.createElement('template');
+        template.innerHTML =`<div id="message-${data.commentId}">
+                                <strong class="author-text">@${data.username}</strong>
+                                <span class="date-posted">${new Date().toLocaleString()}</span>
+                                <div class="comment-text">${data.comment}</div>
+                            </div>`;
+        document.getElementById('messages').firstChild.before(template.content.firstChild);
+    }
+
+    document.getElementById('comment-box-button').onclick = (event) => {
+        let commentText = document.getElementById('comment-box-text').value;
+        let postId = document.location.pathname.match(/\d+/g).map(Number)[0];
+
+        if(!commentText){
+            return;
+        }
+        
+        let fetchOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type":"Application/json"
+            },
+            body: JSON.stringify({
+                comment: commentText,
+                postId, postId
+            })
+        }
+        fetch('/comments/create', fetchOptions)
+        .then((response) => response.json())
+        .then((data) => {
+            if(data.code == 1){
+                addMessage(data);
+            }
+            else{
+                addFlashFromFrontEnd(data.message, data.status);
+            }
+        })
+        .catch(err => console.log(err));
+    }
+</script>

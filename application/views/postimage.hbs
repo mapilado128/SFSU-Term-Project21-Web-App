@@ -3,22 +3,22 @@
     <header id="postheader">
         <h1>Post Your Image Here</h1>
     </header>
-    <form>
+    <form method = "POST" enctype="multipart/form-data" action='/posts/createPost'>
         <div id="usrinpt">
             <div id="titlex">
                 <label>Input Title: </label>
-                <input class="post-input" type="text" required />
+                <input class="post-input" type="text" name="title" required />
                 <br>
             </div>
             <div id="descr">
                 <label>Description: </label>
-                <input class="post-input" type="text" />
+                <input class="post-input" type="text" name="description" required/>
                 <br>
             </div>
             <div id="img">
                 <label>Upload an Image: </label>
                 <div id="imgup">
-                    <input class="post-input" type="file" required />
+                    <input class="post-input" type="file" name="uploadImage" required />
                     <br>
                 </div>
             </div>

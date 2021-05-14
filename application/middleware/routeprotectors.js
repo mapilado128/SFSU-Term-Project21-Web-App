@@ -8,8 +8,8 @@ routeProtectors.userIsLoggedIn = function(req, res, next){
     }
     else{
         errorPrint('User is not logged in');
-        req.flash('error', 'You must be logged in to create a Post!');
-        res.redirect('/login');
+        req.flash('error', 'You must be have an account to create a Post');
+        res.redirect('/registration');
     }
 }
 

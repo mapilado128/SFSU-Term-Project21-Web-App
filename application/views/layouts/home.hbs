@@ -3,17 +3,18 @@
 <head>
    <meta charset="UTF-8">
    <title>{{title}}</title>
-   <link rel="stylesheet" type="text/css" href ="public/css/registration.css">
-   <link rel="stylesheet" type="text/css" href="public/css/sampleHome.css">
-   <link rel="stylesheet" type="text/css" href ="public/css/imagepost.css">
-   <link rel="stylesheet" type="text/css" href ="public/css/login.css">
-   <link rel="stylesheet" type="text/css" href ="public/css/postimage.css">
-   <script defer src="public/js/sampleHome.js"></script>
-   <script defer src="public/js/registrationValidation.js"></script>
-   <script defer src="public/js/frontendjs.js"></script>
+   <link rel="stylesheet" type="text/css" href ="/public/css/registration.css">
+   <link rel="stylesheet" type="text/css" href="/public/css/sampleHome.css">
+   <link rel="stylesheet" type="text/css" href ="/public/css/imagepost.css">
+   <link rel="stylesheet" type="text/css" href ="/public/css/login.css">
+   <link rel="stylesheet" type="text/css" href ="/public/css/postimage.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script defer src="/public/js/sampleHome.js"></script>
+   <script defer src="/public/js/registrationValidation.js"></script>
+   <script defer src="/public/js/frontendjs.js"></script>
 </head>
 <body>
-    <div id="container">
+    <div class="main-body" id="container">
         {{log this}}
         {{> header}}
         {{#if (emptyObject messages)}}

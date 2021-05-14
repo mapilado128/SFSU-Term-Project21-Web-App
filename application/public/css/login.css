@@ -17,6 +17,7 @@
    animation-play-state: running;
 }
 #loginbody{
+   grid-area: content;
    height: 200px;
    width: 400px;
    position: fixed;
@@ -34,6 +35,17 @@
    animation-iteration-count: 1;
    animation-fill-mode: none;
    animation-play-state: running;
+}
+#sign-up-option{
+   font-size: x-small;
+   text-align: center;
+   color: blanchedalmond;
+   font-family: "Verdana", sans-serif;
+}
+#sign-up-option a:visited{
+   font-family: "Verdana", sans-serif;
+   font-weight: normal;
+   color: blanchedalmond;
 }
  #log{
    padding-top: 3px;

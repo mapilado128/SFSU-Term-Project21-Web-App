@@ -47,22 +47,6 @@ form.addEventListener('submit', (e) => {
        e.preventDefault()
        errorElement.innerText = messages.join('\n')
    }
-   form.use(function* (next) {
-       var err
-       try {
-           yield next
-       } catch (e) {
-           if (e.status !== 404) throw e
-           err = e
-       }
-       var status = this.status = (err && err.status) || this.status || 404
-       if (status !== 404) return;
-
-       switch (this.accepts('json', 'html', 'text')) {
-           case 'json':
-               return this.body = {message: err ? err.message :  'page not found'}
-       }
-   })
 })
 function isUCharValid(username){
    return  /^[a-zA-Z][a-zA-Z0-9]/.test(username);

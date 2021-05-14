@@ -1,59 +1,9 @@
-#tithead {
-    font-family: "Brush Script MT", cursive;
-    font-weight: bolder;
-    text-align: left;
-    font-size: 200%;
-    color: blanchedalmond;
- }
- #imagepostbody{
-    height: 200px;
-    width: 400px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -400px;
-    margin-left: -200px;
- }
- #containr{
-    background-color: blanchedalmond;
-    padding: 50px;
-    opacity: 0.7;
- }
- #titleux{
-    font-family: "Verdana", sans-serif;
-    font-weight: normal;
-    color: darkred;
- }
- #authux{
-    font-family: "Verdana", sans-serif;
-    font-weight: normal;
-    color: darkred;
- }
- #datecrux{
-    font-family: "Verdana", sans-serif;
-    font-weight: normal;
-    color: darkred;
- }
- #post-title{
-    font-family: "Verdana", sans-serif;
-    font-weight: normal;
-    color: black;
- }
- #post-author{
-    font-family: "Verdana", sans-serif;
-    font-weight: normal;
-    color: black;
- }
- #post-creation-time{
-    font-family: "Verdana", sans-serif;
-    font-weight: normal;
-    color: black;
-    margin-bottom: 20px;
- }
- #post-ciamge{
-    width: 100%;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.5);
-    animation-name: stretch;
+div#image-container{ 
+   grid-area: content;
+   padding: 5%;
+   display: grid;
+   grid-template-columns: 50% 50%;
+   animation-name: stretch;
     animation-duration: 0.7s;
     animation-timing-function: ease-out;
     animation-delay: 0s;
@@ -61,7 +11,156 @@
     animation-iteration-count: 1;
     animation-fill-mode: none;
     animation-play-state: running;
+}
+div#image-body{
+   background-color: tan;
+   padding: 5%;
+   display: grid;
+   grid-template-rows: .5fr .5fr .5fr 2fr .5fr;
+   gap: 1em;
+}
+ #image-authux{
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: rgb(65, 9, 9);
  }
+ #imagepost-creation-time{
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: darkred;
+    overflow-wrap: break-word;
+ }
+ #imagepost-title{
+    font-family: "Verdana", sans-serif;
+    font-weight: bolder;
+    color: black;
+    font-size: 30px;
+ }
+ #imagepost-author{
+    font-family: "Verdana", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+ }
+ #imagepost-creation-time{
+    font-family: "Verdana", sans-serif;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 20px;
+ }
+ #imagepost-description{
+    padding: 2%;
+   font-family: "Verdana", sans-serif;
+   font-weight: normal;
+   color: black;
+   margin-bottom: 20px;
+   overflow-wrap: break-word;
+}
+#image-imgsrc > img{
+   justify-content: center;
+   align-content: center;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 120px;
+   padding-bottom: 120px;
+   width: 100%;
+
+}
+#comment-box{
+   margin: .2rem;
+   padding:.2rem;
+   display:flex;
+   background-color: rgba(255, 223, 174, 0.692);
+   box-shadow: -1px 1px 2px 2px rgb(185, 161, 129);
+   border-radius: .2rem;
+}
+#comment-box-button{
+   padding: .25rem;
+   margin: .25rem;
+   margin-left: 1.2rem;
+   line-height: 2.5;
+   color:rgb(95, 72, 56);
+   font-size: 1.5rem;
+   cursor: pointer;
+}
+#comment-box-button:hover{
+   color:rgb(65, 9, 9)
+}
+
+#messages{
+   overflow-y: auto;
+   display: flex;
+   flex-flow: column-reverse nowrap;
+   scroll-behavior: smooth;
+   font-family: "Verdana", sans-serif;
+   border-radius: .2rem;
+}
+div[id^=message-]{
+   border: .625px solid tan;
+   background-color: rgba(255, 223, 174, 0.692);
+   display: grid;
+   grid-template-rows: .3fr 1fr;
+   grid-template-columns: 1fr 1fr;
+   gap: .2em;
+   padding: .25rem;
+   margin: .2rem;
+   font-size: 1rem;
+   border-bottom: .0625rem solid maroon;
+   border-radius: .2rem;
+   grid-template-areas: "author created"
+                        "comment comment";
+}
+#creation-time-header{
+   font-family: "Verdana", sans-serif;
+   color:rgb(65, 9, 9);
+   font-weight: bold;
+}
+#comment-box-text{
+   font-family: "Verdana", sans-serif;
+   width: 90%;
+   border: none;
+   border-radius: .2rem;
+   color: navajowhite;
+   background-color: rgb(65, 9, 9);
+}
+::-webkit-input-placeholder { 
+   color: navajowhite;
+   padding-left: .5rem;
+   padding-top: .2rem;
+   opacity: 0.7;
+ }
+ #image-imgsrc{
+   background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+ }
+ #comment-container{
+   display: grid;
+   grid-template-rows: auto 75px;
+   grid-template-columns: 1fr;
+   gap: .2rem;
+   grid-template-areas: "messages"
+                         "comment-box";
+   max-height: 80vh;
+ }
+ .author-text{
+   grid-area: author;
+   justify-self: start;
+   color:rgb(65, 9, 9);
+ }
+ .comment-text{
+   grid-area:comment;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-height: 75px;
+   min-height: 75px;
+ }
+ .date-posted{
+    font-size: x-small;
+    color:rgb(95, 72, 56);
+   grid-area: created;
+   justify-self: end;
+}
+
  @keyframes stretch {
     0% {
         transform: scale(.3);
