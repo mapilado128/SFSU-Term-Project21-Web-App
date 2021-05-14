@@ -35,8 +35,8 @@ Please follow the instructions below and fill in the information requested when 
 
 **2.** Once the database file is all good, using your terminal do the <br />
        following commands *consecutively*: <br />
-   `cd application <br />
-    npm install
+   `- cd application
+    - npm install
     `
 <br />
 ## Run Instructions
