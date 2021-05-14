@@ -42,8 +42,6 @@ Please follow the instructions below and fill in the information requested when 
 ## Run Instructions
 **1.** Make sure NPM is installed <br />
 **2.** Once you're sure, on your terminal, do: <br />
-   `npm start
-   `
-   <br />
+   `npm start`
 3. Finally, while npm is running, go to your web-browser and type in:
     [localhost:3000]
