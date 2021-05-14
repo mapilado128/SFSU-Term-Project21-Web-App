@@ -33,21 +33,16 @@ Please follow the instructions below and fill in the information requested when 
            where you want to import the file - else, click new and start import
 - You can now switch to the Schemas tab and see the db tables on  there 
 
-**2.** Once the database file is all good, using your terminal do:
-   ```
-    cd application
-    ```
-
-**3.** Again, on your terminal, do:
-   ```
+**2.** Once the database file is all good, using your terminal do the 
+       following commands *consecutively*:
+   `cd application
     npm install
-    ```
+    `
 
 ## Run Instructions
 **1.** Make sure NPM is installed
 **2.** Once you're sure, on your terminal, do:
-   ```
-    npm start
-    ```
+   `npm start
+   `
 3. Finally, while npm is running, go to your web-browser and type in:
     [localhost:3000]
