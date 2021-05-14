@@ -38,7 +38,6 @@ Please follow the instructions below and fill in the information requested when 
    `cd application` <br />
      `npm install`
     
-<br />
 ## Run Instructions <br />
 **1.** Make sure NPM is installed <br />
 **2.** Once you're sure, on your terminal, do: <br />
