@@ -6,6 +6,7 @@ var multer = require('multer');
 var crypto = require('crypto');
 var PostModel = require('../models/Posts');
 var PostError = require('../helpers/error/PostError');
+var {check, validationResult} = require('express-validator');
 
 var storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -30,7 +31,11 @@ router.post('/createPost', uploader.single("uploadImage"), (req, res, next) => {
     let description = req.body.description;
     let fk_userId = req.session.userId;
 
-    //do server validation
+    const acceptedFiles = ['png', 'jpg', 'jpeg'];
+    const fileExtension = req.file.mimetype.split('/').pop();
+    if(!acceptedFiles.includes(fileExtension)){
+        return res.status(200).json({ error: 'Image file is not valid (jpg/jpeg/png)'});
+    }
 
     sharp(fileUploaded)
     .resize(200)
