@@ -33,9 +33,6 @@ router.post("/registration",
   
     const errorsX = validationResult(req);
     if(!errorsX.isEmpty() || password !== cpassword){
-      if(errorsX.isEmpty){
-        return res.status(400).json('Passwords did not match - please enable Javascript')
-      }
       return res.status(400).json({ errorsX: errorsX.array() })
     }
       UserModel.usernameExists(username)
