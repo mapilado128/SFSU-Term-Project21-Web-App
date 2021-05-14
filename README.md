@@ -35,13 +35,14 @@ Please follow the instructions below and fill in the information requested when 
 
 **2.** Once the database file is all good, using your terminal do the <br />
        following commands *consecutively*: <br />
-   `cd application` <br />
-     `npm install`
+   `cd application` - to get into the right folder<br />
+     `npm install` - to install npm into the folder <br />
+     `npm install express-validator` - to install express-validator for the server-side validation
     
 ## Run Instructions <br />
 **1.** Make sure NPM is installed <br />
 **2.** Once you're sure, on your terminal, do: <br />
- `npm start`
+ `npm start` - to start npm
    <br />
-3. Finally, while npm is running, go to your web-browser and type in: <br />
-   [localhost:3000]
+3. Finally, while npm is running, go to your web-browser and type in the URL: <br />
+   localhost:3000
