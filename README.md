@@ -36,7 +36,8 @@ Please follow the instructions below and fill in the information requested when 
 **2.** Once the database file is all good, using your terminal do the <br />
        following commands *consecutively*: <br />
    `cd application` <br />
-     `npm install`
+     `npm install` <br />
+     `npm install express-validator`
     
 ## Run Instructions <br />
 **1.** Make sure NPM is installed <br />
